@@ -63,6 +63,11 @@ offset: {
        fall: {
        imageSrc: './img/Ronin/Fall.png',
        framesMax: 2,
+    },
+      attack1: {
+      imageSrc: './img/Ronin/Attack1.png',
+      framesMax: 6,
+
 
     }
   }
