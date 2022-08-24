@@ -76,17 +76,49 @@ offset: {
 
 const enemy = new Fighter({
   position: {
-  x: 400,
-  y: 100
+   x: 400,
+   y: 100
 },
-velocity: {
-  x: 0,
-  y: 0
+  velocity: {
+   x: 0,
+   y: 0
 },
   color: 'blue',
   offset: {
     x: -50,
     y: 0
+  },
+
+  imageSrc: './img/DKnight/idle.png',
+   framesMax: 11,
+   scale: 2.8,
+   offset: {
+    x: 215,
+    y: 180,
+   },
+   sprites: {
+    idle: {
+      imageSrc: './img/DKnight/idle.png',
+      framesMax: 11
+    },
+       run: {
+       imageSrc: './img/DKnight/Run.png',
+       framesMax: 8,
+    },
+       jump: {
+       imageSrc: './img/DKnight/Jump.png',
+       framesMax: 3,
+    },
+       fall: {
+       imageSrc: './img/DKnight/Fall.png',
+       framesMax: 3,
+    },
+      attack1: {
+      imageSrc: './img/DKnight/Attack1.png',
+      framesMax: 7,
+
+
+    }
   }
 })
 
@@ -119,7 +151,7 @@ function animate() {
   background.update()
   shop.update()
   player.update()
-  //enemy.update()
+  enemy.update()
 
   player.velocity.x = 0
   enemy.velocity.x = 0
@@ -145,9 +177,19 @@ function animate() {
   // Enemy Movement //
   if (keys.ArrowLeft.pressed && enemy.lastkey === 'ArrowLeft') {
     enemy.velocity.x = -5
+    enemy.switchSprite('run')
   } else if (keys.ArrowRight.pressed && enemy.lastkey === 'ArrowRight') {
     enemy.velocity.x = 5
+    enemy.switchSprite('run')
+  } else {
+    enemy.switchSprite('idle')
   }
+    // Jumping
+   if (enemy.velocity.y < 0) {
+    enemy.switchSprite('jump')
+    } else if (enemy.velocity.y > 0) {
+     enemy.switchSprite('fall')
+    }
 
   // DETECT FOR COLLISION //
   if (
@@ -211,7 +253,7 @@ window.addEventListener('keydown', (event) => {
      enemy.velocity.y = -20
      break
      case 'ArrowDown':
-     enemy.isAttacking = true
+     enemy.attack()
      break
   }
 })
