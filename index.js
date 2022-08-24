@@ -55,6 +55,14 @@ offset: {
        run: {
        imageSrc: './img/Ronin/Run.png',
        framesMax: 8,
+    },
+       jump: {
+       imageSrc: './img/Ronin/Jump.png',
+       framesMax: 2,
+    },
+       fall: {
+       imageSrc: './img/Ronin/Fall.png',
+       framesMax: 2,
 
     }
   }
@@ -112,14 +120,22 @@ function animate() {
   enemy.velocity.x = 0
 
   // Player movement //
-  player.image = player.sprites.idle.image
   if (keys.a.pressed && player.lastkey === 'a') {
     player.velocity.x = -5
-    player.image = player.sprites.run.image
+   player.switchSprite('run')
   } else if (keys.d.pressed && player.lastkey === 'd') {
     player.velocity.x = 5
-    player.image = player.sprites.run.image
+    player.switchSprite('run')
+  } else {
+    player.switchSprite('idle')
   }
+
+  // Jumping
+   if (player.velocity.y < 0) {
+   player.switchSprite('jump')
+   } else if (player.velocity.y > 0) {
+    player.switchSprite('fall')
+   }
 
   // Enemy Movement //
   if (keys.ArrowLeft.pressed && enemy.lastkey === 'ArrowLeft') {
