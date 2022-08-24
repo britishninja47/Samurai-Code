@@ -19,14 +19,14 @@ const background = new Sprite({
 
 const shop = new Sprite({
   position: {
-    x: 300,
+    x: 320,
     y: 236
   },
   imageSrc: './img/shop.png',
   scale: 2,
   framesMax: 6
-
 })
+
 const player = new Fighter({
   position: {
   x: 0,
@@ -39,7 +39,14 @@ velocity: {
 offset: {
   x: 0,
   y: 0
-}
+},
+   imageSrc: './img/Ronin/idle.png',
+   framesMax: 8,
+   scale: 2.6,
+   offset: {
+    x: 215,
+    y: 180,
+   }
 })
 
 
@@ -88,7 +95,7 @@ function animate() {
   background.update()
   shop.update()
   player.update()
-  enemy.update()
+  //enemy.update()
 
   player.velocity.x = 0
   enemy.velocity.x = 0
