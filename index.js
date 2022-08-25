@@ -44,7 +44,7 @@ offset: {
    framesMax: 8,
    scale: 2.6,
    offset: {
-    x: 215,
+    x: 180,
     y: 180,
    },
    sprites: {
@@ -70,6 +70,14 @@ offset: {
 
 
     }
+  },
+  attackBox: {
+    offset: {
+      x: 150,
+      y: 0
+    },
+    width: 160,
+    height: 50
   }
 })
 
@@ -93,7 +101,7 @@ const enemy = new Fighter({
    framesMax: 11,
    scale: 2.8,
    offset: {
-    x: 215,
+    x: -100,
     y: 180,
    },
    sprites: {
@@ -119,6 +127,14 @@ const enemy = new Fighter({
 
 
     }
+  },
+  attackBox: {
+    offset: {
+      x: 0,
+      y: 0
+    },
+    width: 100,
+    height: 50
   }
 })
 
@@ -166,13 +182,13 @@ function animate() {
   } else {
     player.switchSprite('idle')
   }
-
   // Jumping
    if (player.velocity.y < 0) {
    player.switchSprite('jump')
    } else if (player.velocity.y > 0) {
     player.switchSprite('fall')
    }
+
 
   // Enemy Movement //
   if (keys.ArrowLeft.pressed && enemy.lastkey === 'ArrowLeft') {
@@ -197,11 +213,16 @@ function animate() {
       rectangle1: player,
       rectangle2: enemy
     }) &&
-    player.isAttacking
+    player.isAttacking && player.framesCurrent === 4
     ) {
       player.isAttacking = false
       enemy.health -= 20
       document.querySelector('#enemyHealth').style.width = enemy.health + '%'
+  }
+
+  // If player misses attack
+  if (player.isAttacking && player.framesCurrent === 4) {
+    player.isAttacking = false
   }
 
   if (
