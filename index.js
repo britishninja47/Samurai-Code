@@ -44,7 +44,7 @@ offset: {
    framesMax: 8,
    scale: 2.6,
    offset: {
-    x: 180,
+    x: 215,
     y: 180,
    },
    sprites: {
@@ -73,8 +73,8 @@ offset: {
   },
   attackBox: {
     offset: {
-      x: 150,
-      y: 0
+      x: 100,
+      y: 50
     },
     width: 160,
     height: 50
@@ -101,7 +101,7 @@ const enemy = new Fighter({
    framesMax: 11,
    scale: 2.8,
    offset: {
-    x: -100,
+    x: 190,
     y: 180,
    },
    sprites: {
@@ -130,10 +130,10 @@ const enemy = new Fighter({
   },
   attackBox: {
     offset: {
-      x: 0,
-      y: 0
+      x: -60,
+      y: 50,
     },
-    width: 100,
+    width: 60,
     height: 50
   }
 })
@@ -220,7 +220,7 @@ function animate() {
       document.querySelector('#enemyHealth').style.width = enemy.health + '%'
   }
 
-  // If player misses attack
+  // If player misses attack //
   if (player.isAttacking && player.framesCurrent === 4) {
     player.isAttacking = false
   }
@@ -230,12 +230,18 @@ function animate() {
       rectangle1: enemy,
       rectangle2: player
     }) &&
-    enemy.isAttacking
+    enemy.isAttacking && enemy.framesCurrent === 2
     ) {
       enemy.isAttacking = false
       player.health -= 20
       document.querySelector('#playerHealth').style.width = player.health + '%'
   }
+
+ // If Enemy misses attack //
+  if (enemy.isAttacking && enemy.framesCurrent === 2) {
+    enemy.isAttacking = false
+  }
+
 
    // End of game based on health bar
    if (enemy.health<= 0 || player.health <= 0) {

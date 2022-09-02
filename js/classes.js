@@ -14,8 +14,8 @@ class Sprite {
     this.scale = scale
     this.framesMax = framesMax
     this.framesCurrent = 0
-    this.framesEclapsed = 0
-    this.framesHold = 6
+    this.framesElapsed = 0
+    this.framesHold = 10
     this.offset = offset
   }
 
@@ -34,16 +34,16 @@ class Sprite {
   }
 
   animateFrames() {
-    this.framesEclapsed++
+    this.framesElapsed++
 
-    if (this.framesEclapsed % this.framesHold === 0) {
+    if (this.framesElapsed % this.framesHold === 0) {
     if (this.framesCurrent < this.framesMax - 1) {
       this.framesCurrent++
     } else {
       this.framesCurrent = 0
    }
   }
-  }
+ }
 
   update() {
     this.draw()
@@ -109,11 +109,12 @@ class Fighter extends Sprite {
     this.attackBox.position.x = this.position.x + this.attackBox.offset.x
     this.attackBox.position.y = this.position.y + this.attackBox.offset.y
 
-    c.fillRect(
-      this.attackBox.position.x,
-      this.attackBox.position.y,
-      this.attackBox.width,
-      this.attackBox.height)
+    // Draw the attack box
+    // c.fillRect(
+    //  this.attackBox.position.x,
+    //  this.attackBox.position.y,
+    //  this.attackBox.width,
+    //  this.attackBox.height)
 
     this.position.x += this.velocity.x
     this.position.y += this.velocity.y
