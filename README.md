@@ -1,5 +1,5 @@
 # Samurai-Code
-My first two-player fighter for the PC/Mac. Since is my first game i want try and keep it as simple as possible. 
+My first two-player fighting game for the PC/Mac. Since this is my first game i want try and keep it as simple as possible. Thanks to LuizMelo on itch for the sprites I used for this game and Ansimuz for the amazing futuristic 8-bit background!!
 
 - 2 Characters to play as Zen or D-Knight 
 - 1 attack button (more coming soon)
