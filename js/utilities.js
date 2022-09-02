@@ -19,11 +19,11 @@ function rectangularCollision({ rectangle1, rectangle2 }) {
        } else if (player.health > enemy.health) {
         document.querySelector('#displayText').innerHTML = 'ZEN Wins!'
       } else if (player.health < enemy.health) {
-        document.querySelector('#displayText').innerHTML = 'X KNIGHT Wins!'
+        document.querySelector('#displayText').innerHTML = 'D-KNIGHT Wins!'
   }
 }
 
-  let timer = 60
+  let timer = 51
   let timerId
   function decreasetimer() {
     if (timer > 0) {
