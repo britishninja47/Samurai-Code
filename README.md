@@ -4,6 +4,14 @@ My first two-player fighter for the PC/Mac. Since is my first game i want try an
 - 2 Characters to play as Zen or D-Knight 
 - 1 attack button (more coming soon)
 - 1 stage (more coming soon)
-- Fight till one players health reaches 0 
+- Fight till one players health reaches 0  
+
+<h1> HOW TO PLAY :video_game:</h1>
+<h2>Zen (samurai) & D-Knight</h2> <h3> W - Jump / A - Left / D - Right / SpaceBar - Attack </h3> 
+<h3> UpArrow - Jump / LeftArrow - left / RightArrow - Right / DownArrow - Attack </h3>
+
+
+                     
+---                    
 
 <img src="https://media.giphy.com/media/QySLsQjYxeXlu/giphy.gif" width="600" height="300"/>
