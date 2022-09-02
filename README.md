@@ -8,10 +8,9 @@ My first two-player fighting game for the PC/Mac. Since this is my first game i 
 
 <h1> HOW TO PLAY :video_game:</h1>
 <h2>Zen (samurai) & D-Knight</h2> <h3> W - Jump / A - Left / D - Right / SpaceBar - Attack </h3> 
-<h3> UpArrow - Jump / LeftArrow - left / RightArrow - Right / DownArrow - Attack </h3>
-
-
-                     
+<h3> UpArrow - Jump / LeftArrow - left / RightArrow - Right / DownArrow - Attack </h3> 
+---
+   https://samurai-code.netlify.app/    [PLAY HERE]                  
 ---                    
 
 <img src="https://media.giphy.com/media/QySLsQjYxeXlu/giphy.gif" width="600" height="300"/>
