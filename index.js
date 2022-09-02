@@ -71,7 +71,11 @@ offset: {
       takeHit: {
         imageSrc: './img/Ronin/TakeHit1.png',
         framesMax: 4,
-    }
+    },
+       death: {
+         imageSrc: './img/Ronin/Death.png',
+         framesMax: 6,
+       }
   },
   attackBox: {
     offset: {
@@ -130,7 +134,10 @@ const enemy = new Fighter({
       takeHit: {
         imageSrc: './img/DKnight/Take Hit.png',
         framesMax: 4,
-
+    },
+       death: {
+        imageSrc: './img/DKnight/Death.png',
+        framesMax: 11,
     }
   },
   attackBox: {
@@ -260,6 +267,7 @@ function animate() {
 animate()
 
 window.addEventListener('keydown', (event) => {
+  if(!player.dead ) {
   switch (event.key) {
     case 'd':
       keys.d.pressed = true
@@ -276,6 +284,10 @@ window.addEventListener('keydown', (event) => {
     player.attack()
     break
 
+   }
+  }
+  if( !enemy.dead) {
+  switch(event.key) {
     case 'ArrowRight':
       keys.ArrowRight.pressed = true
       enemy.lastkey = 'ArrowRight'
@@ -291,6 +303,8 @@ window.addEventListener('keydown', (event) => {
      enemy.attack()
      break
   }
+ }
+
 })
 
 window.addEventListener('keyup', (event) => {
