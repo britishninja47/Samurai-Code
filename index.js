@@ -4,9 +4,11 @@ const c = canvas.getContext('2d')
 canvas.width = 1024
 canvas.height = 576
 
+
+
 c.fillRect(0, 0, canvas.width, canvas.height)
 
-const gravity = 0.7
+const gravity = 0.6
 
 const background = new Sprite({
   position: {
@@ -188,10 +190,10 @@ function animate() {
 
   // Player movement //
   if (keys.a.pressed && player.lastkey === 'a') {
-    player.velocity.x = -6
+    player.velocity.x = -5
    player.switchSprite('run')
   } else if (keys.d.pressed && player.lastkey === 'd') {
-    player.velocity.x = 6
+    player.velocity.x = 5
     player.switchSprite('run')
   } else {
     player.switchSprite('idle')
@@ -284,7 +286,7 @@ window.addEventListener('keydown', (event) => {
     player.lastkey = 'a'
     break
     case 'w':
-     player.velocity.y = -20
+     player.velocity.y = -18
     break
     case ' ':
     player.attack()
@@ -303,7 +305,7 @@ window.addEventListener('keydown', (event) => {
     enemy.lastkey = 'ArrowLeft'
     break
     case 'ArrowUp':
-     enemy.velocity.y = -20
+     enemy.velocity.y = -18
      break
      case 'ArrowDown':
      enemy.attack()
