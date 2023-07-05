@@ -92,7 +92,7 @@ offset: {
 
 const enemy = new Fighter({
   position: {
-   x: 400,
+   x: 910,
    y: 100
 },
   velocity: {
@@ -208,10 +208,10 @@ function animate() {
 
   // Enemy Movement //
   if (keys.ArrowLeft.pressed && enemy.lastkey === 'ArrowLeft') {
-    enemy.velocity.x = -4
+    enemy.velocity.x = -5
     enemy.switchSprite('run')
   } else if (keys.ArrowRight.pressed && enemy.lastkey === 'ArrowRight') {
-    enemy.velocity.x = 4
+    enemy.velocity.x = 5
     enemy.switchSprite('run')
   } else {
     enemy.switchSprite('idle')
